@@ -1036,7 +1036,7 @@
                 </div>
                 <div>
                   <label for="company">Company</label>
-                  <input id="company" name="company" autocomplete="organization" placeholder="Acme Corp" required />
+                  <input id="company" name="company" autocomplete="organization" placeholder="--------" required />
                 </div>
               </div>
 

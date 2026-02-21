@@ -960,8 +960,7 @@
             </div>
 
             <p class="map-note">
-              Want a real map? Swap the SVG with a static image or embed a map provider. If you want a no‑API approach,
-              use a branded SVG map of the U.S. with your facility markers.
+             
             </p>
           </div>
         </div>

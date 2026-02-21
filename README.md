@@ -803,7 +803,7 @@
           <ul>
             <li>Chain‑of‑custody handoffs</li>
             <li>Temperature and security requirements</li>
-            <li>Escalation playbooks</li>
+            <li>Specialist cross border advisors</li>
           </ul>
         </article>
       </div>

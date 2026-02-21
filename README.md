@@ -1046,7 +1046,7 @@
                 </div>
                 <div>
                   <label for="phone">Phone</label>
-                  <input id="phone" name="phone" autocomplete="tel" placeholder="+1 (555) 123‑4567" />
+                  <input id="phone" name="phone" autocomplete="tel" placeholder="+44 (131) 123‑4567" />
                 </div>
               </div>
 

@@ -6,625 +6,12 @@
   <meta name="description" content="National & international logistics, climate-controlled storage network, and secure document control services." />
   <title>Logistics • Climate-Controlled Storage • Document Control</title>
 
-  <!--
-    Cloudflare Pages / Static Hosting Notes
-    - Upload this single file as index.html (or keep name and set routing).
-    - No build step required.
+  <!-- Cloudflare Pages / Static Hosting Notes
+    - Put index.html + style.css in the same folder (root of your Pages project).
+    - No build step required for static Pages.
   -->
 
-  <style>
-    :root{
-      --bg:#070707;
-      --panel:#0f0f0f;
-      --panel2:#121212;
-      --text:#f3f3f3;
-      --muted:#b8b8b8;
-      --yellow:#ffd400;
-      --yellow2:#ffea66;
-      --border:rgba(255,212,0,.18);
-      --shadow: 0 18px 55px rgba(0,0,0,.55);
-      --shadow2: 0 10px 28px rgba(0,0,0,.45);
-      --ring: 0 0 0 3px rgba(255,212,0,.28);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1120px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(900px 380px at 18% 10%, rgba(255,212,0,.18), transparent 60%),
-        radial-gradient(700px 330px at 85% 12%, rgba(255,212,0,.10), transparent 62%),
-        radial-gradient(900px 430px at 50% 100%, rgba(255,212,0,.08), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.4;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    .container{ width:min(var(--max), calc(100% - 40px)); margin-inline:auto; }
-
-    /* Header */
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(7,7,7,.72);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:16px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-
-    .mark{
-      width:38px;
-      height:38px;
-      border-radius:12px;
-      background: linear-gradient(135deg, var(--yellow), #ffb800);
-      box-shadow: 0 10px 18px rgba(255,212,0,.18);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .mark:before{
-      content:"";
-      position:absolute;
-      inset:-35% -35% auto auto;
-      width:75px;
-      height:75px;
-      background: rgba(0,0,0,.18);
-      transform: rotate(20deg);
-      border-radius:18px;
-    }
-
-    .brand span{ color:var(--yellow); }
-
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:18px;
-      margin:0;
-      padding:0;
-      align-items:center;
-    }
-
-    nav a{
-      color: var(--muted);
-      font-weight:600;
-      font-size: 14px;
-      padding:10px 10px;
-      border-radius: 12px;
-      transition: all .18s ease;
-    }
-
-    nav a:hover{ color: var(--text); background: rgba(255,255,255,.05); }
-
-    .cta{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      font-weight:800;
-      border-radius: 14px;
-      padding: 11px 14px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
-    }
-
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
-    .btn:focus{ outline:none; box-shadow: var(--ring); }
-
-    .btn.primary{
-      background: linear-gradient(135deg, var(--yellow), #ffb800);
-      color:#0a0a0a;
-      border-color: rgba(255,212,0,.55);
-      box-shadow: 0 12px 26px rgba(255,212,0,.16);
-    }
-
-    .btn.primary:hover{ background: linear-gradient(135deg, #ffde33, #ffb800); }
-
-    .mobile-toggle{
-      display:none;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      border-radius: 14px;
-      padding: 10px 12px;
-      color: var(--text);
-    }
-
-    /* Hero */
-    .hero{
-      padding: 44px 0 22px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      align-items:stretch;
-    }
-
-    .hero-card{
-      border:1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .hero-card:before{
-      content:"";
-      position:absolute;
-      inset:auto -20% -45% -20%;
-      height: 320px;
-      background: radial-gradient(circle at 50% 50%, rgba(255,212,0,.22), transparent 65%);
-      filter: blur(1px);
-      pointer-events:none;
-    }
-
-    .hero-inner{ padding: 30px; position:relative; }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,212,0,.22);
-      background: rgba(255,212,0,.08);
-      color: var(--yellow2);
-      font-weight:800;
-      letter-spacing:.2px;
-      font-size: 13px;
-    }
-
-    .k-dot{ width:10px; height:10px; border-radius:999px; background: var(--yellow); box-shadow: 0 0 0 6px rgba(255,212,0,.12); }
-
-    h1{
-      margin: 14px 0 12px;
-      font-size: clamp(30px, 4.2vw, 46px);
-      line-height: 1.05;
-      letter-spacing: -0.6px;
-    }
-
-    .lead{
-      margin: 0 0 18px;
-      color: rgba(243,243,243,.80);
-      font-size: 16px;
-      max-width: 60ch;
-    }
-
-    .hero-actions{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
-
-    .micro{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px 16px;
-      margin-top: 18px;
-      color: rgba(243,243,243,.72);
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    .micro .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .icon{
-      width:18px;
-      height:18px;
-      display:inline-block;
-      color: var(--yellow);
-    }
-
-    /* Side panel */
-    .side{
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .side-header{
-      padding: 18px 18px 12px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 10px;
-    }
-
-    .side-title{
-      font-weight: 900;
-      letter-spacing: .1px;
-      font-size: 15px;
-    }
-
-    .badge{
-      font-size: 12px;
-      font-weight: 900;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,212,0,.28);
-      background: rgba(255,212,0,.10);
-      color: var(--yellow2);
-      white-space:nowrap;
-    }
-
-    .side-body{ padding: 16px 18px 18px; }
-
-    .stat-grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 12px;
-    }
-
-    .stat{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.22);
-    }
-
-    .stat .num{
-      font-weight: 950;
-      font-size: 20px;
-      letter-spacing: -0.3px;
-      color: var(--yellow);
-    }
-
-    .stat .lbl{ color: rgba(243,243,243,.72); font-weight:700; font-size: 12px; margin-top: 6px; }
-
-    .side-list{
-      margin: 14px 0 0;
-      padding: 0;
-      list-style: none;
-      display:grid;
-      gap: 10px;
-    }
-
-    .side-list li{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-
-    .side-list strong{ display:block; font-size: 13px; letter-spacing: .1px; }
-    .side-list p{ margin: 2px 0 0; color: rgba(243,243,243,.72); font-size: 12px; }
-
-    /* Sections */
-    section{ padding: 20px 0; }
-
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .section-head h2{
-      margin:0;
-      font-size: 20px;
-      letter-spacing: -0.2px;
-    }
-
-    .section-head .sub{
-      margin:0;
-      color: rgba(243,243,243,.70);
-      font-weight: 600;
-      font-size: 13px;
-      max-width: 62ch;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .card{
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,.32);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .card:before{
-      content:"";
-      position:absolute;
-      inset:auto -35% -50% -35%;
-      height: 240px;
-      background: radial-gradient(circle at 50% 40%, rgba(255,212,0,.16), transparent 65%);
-      pointer-events:none;
-    }
-
-    .card > *{ position:relative; }
-
-    .card h3{
-      margin: 10px 0 8px;
-      font-size: 16px;
-      letter-spacing: -0.1px;
-    }
-
-    .card p{
-      margin: 0;
-      color: rgba(243,243,243,.75);
-      font-size: 13px;
-    }
-
-    .card ul{
-      margin: 12px 0 0;
-      padding: 0 0 0 18px;
-      color: rgba(243,243,243,.75);
-      font-size: 13px;
-    }
-
-    .card li{ margin: 6px 0; }
-
-    /* Capabilities */
-    .cap-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .cap{
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-
-    .cap h3{ margin: 0 0 10px; font-size: 16px; }
-
-    .cap .tags{ display:flex; flex-wrap:wrap; gap:8px; }
-
-    .tag{
-      font-size: 12px;
-      font-weight: 800;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.22);
-      color: rgba(243,243,243,.82);
-    }
-
-    .tag.yellow{
-      border-color: rgba(255,212,0,.26);
-      background: rgba(255,212,0,.10);
-      color: var(--yellow2);
-    }
-
-    /* Network */
-    .network{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 14px;
-      align-items:stretch;
-    }
-
-    .map{
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius2);
-      overflow:hidden;
-      box-shadow: var(--shadow2);
-    }
-
-    .map-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      padding: 14px 16px;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .map-head strong{ font-size: 14px; }
-    .map-head small{ color: rgba(243,243,243,.70); font-weight: 650; }
-
-    .map-body{ padding: 14px 16px 18px; }
-
-    .svg-wrap{
-      width:100%;
-      aspect-ratio: 16/9;
-      border-radius: 18px;
-      border:1px dashed rgba(255,212,0,.22);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.35), rgba(255,255,255,.02));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .svg-wrap:before{
-      content:"";
-      position:absolute;
-      inset: -40% -40% -40% -40%;
-      background: radial-gradient(circle at 35% 40%, rgba(255,212,0,.18), transparent 55%);
-      transform: rotate(-6deg);
-      pointer-events:none;
-    }
-
-    .svg-wrap svg{ width: 88%; max-width: 720px; height:auto; position:relative; }
-
-    .locator{
-      fill: var(--yellow);
-      stroke: rgba(0,0,0,.55);
-      stroke-width: 2;
-    }
-
-    .pulse{
-      fill: rgba(255,212,0,.22);
-      animation: pulse 2.2s ease-in-out infinite;
-      transform-origin: center;
-    }
-
-    @keyframes pulse{
-      0%{ transform: scale(.86); opacity: .62; }
-      55%{ transform: scale(1.12); opacity: .10; }
-      100%{ transform: scale(.86); opacity: .62; }
-    }
-
-    .map-note{ margin: 12px 0 0; color: rgba(243,243,243,.72); font-size: 13px; }
-
-    .map-note a{ color: var(--yellow2); font-weight: 800; text-decoration: underline; text-decoration-color: rgba(255,212,0,.35); }
-
-    .quote{
-      border:1px solid rgba(255,212,0,.22);
-      background: rgba(255,212,0,.07);
-      border-radius: var(--radius2);
-      padding: 18px;
-      height:100%;
-      box-shadow: 0 10px 28px rgba(0,0,0,.42);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap: 12px;
-    }
-
-    .quote p{ margin:0; color: rgba(243,243,243,.84); font-weight: 650; }
-    .quote .by{ color: rgba(243,243,243,.72); font-size: 13px; }
-
-    /* Contact */
-    .contact{
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius2);
-      overflow:hidden;
-      box-shadow: var(--shadow2);
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .contact-left{ padding: 18px; border-right: 1px solid rgba(255,255,255,.06); }
-    .contact-right{ padding: 18px; }
-
-    .contact h3{ margin: 0 0 10px; }
-    .contact p{ margin: 0 0 12px; color: rgba(243,243,243,.74); font-size: 13px; }
-
-    form{ display:grid; gap: 10px; }
-
-    label{ font-size: 12px; font-weight: 850; color: rgba(243,243,243,.78); }
-
-    input, textarea, select{
-      width:100%;
-      padding: 11px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.25);
-      color: var(--text);
-      font-weight: 650;
-      outline:none;
-      transition: box-shadow .15s ease, border-color .15s ease;
-    }
-
-    input:focus, textarea:focus, select:focus{ box-shadow: var(--ring); border-color: rgba(255,212,0,.35); }
-
-    textarea{ min-height: 110px; resize: vertical; }
-
-    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    .fine{
-      font-size: 12px;
-      color: rgba(243,243,243,.65);
-      margin-top: 10px;
-    }
-
-    /* Footer */
-    footer{
-      padding: 24px 0 34px;
-      color: rgba(243,243,243,.65);
-      font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,.06);
-      margin-top: 22px;
-    }
-
-    .foot{
-      display:flex;
-      gap: 14px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-
-    .foot a{ color: rgba(243,243,243,.72); font-weight: 800; }
-    .foot a:hover{ color: var(--yellow2); }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .network{ grid-template-columns: 1fr; }
-      .cards{ grid-template-columns: 1fr; }
-      .cap-grid{ grid-template-columns: 1fr; }
-      .contact-grid{ grid-template-columns: 1fr; }
-      .contact-left{ border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
-      nav ul{ display:none; }
-      .mobile-toggle{ display:inline-flex; }
-      .cta .btn{ display:none; }
-      .cta .btn.primary{ display:inline-flex; }
-    }
-
-    /* Mobile menu */
-    .mobile-menu{
-      display:none;
-      border-top:1px solid rgba(255,255,255,.06);
-      padding: 10px 0 14px;
-    }
-    .mobile-menu.open{ display:block; }
-    .mobile-menu a{ display:block; padding: 10px 0; color: rgba(243,243,243,.82); font-weight: 800; }
-    .mobile-menu a small{ display:block; color: rgba(243,243,243,.62); font-weight: 650; margin-top: 2px; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -675,10 +62,10 @@
         <div class="hero-card">
           <div class="hero-inner">
             <div class="kicker"><span class="k-dot" aria-hidden="true"></span> National & International Logistics + Secure Storage</div>
-            <h1>Move freight faster. Store it safer. Control documents end‑to‑end.</h1>
+            <h1>Move freight faster. Store it safer. Control documents end-to-end.</h1>
             <p class="lead">
-              A unified network for freight forwarding, climate‑controlled warehousing, and secure document control.
-              Built for regulated industries, high‑value cargo, and audit‑ready operations.
+              A unified network for freight forwarding, climate-controlled warehousing, and secure document control.
+              Built for regulated industries, high-value cargo, and audit-ready operations.
             </p>
             <div class="hero-actions">
               <a class="btn primary" href="#contact">Get a quote</a>
@@ -687,29 +74,29 @@
             </div>
 
             <div class="micro" aria-label="Highlights">
-              <div class="pill"> 
+              <div class="pill">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7h18M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 7l1-3h6l1 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </span>
-                Climate‑controlled storage
+                Climate-controlled storage
               </div>
               <div class="pill">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l4-4 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </span>
-                SLA‑driven logistics
+                SLA-driven logistics
               </div>
               <div class="pill">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l7 4v6c0 5-3 8-7 8s-7-3-7-8V7l7-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                Secure chain‑of‑custody
+                Secure chain-of-custody
               </div>
               <div class="pill">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 </span>
-                Single provider, end‑to‑end
+                Single provider, end-to-end
               </div>
             </div>
           </div>
@@ -756,7 +143,7 @@
                 </span>
                 <div>
                   <strong>Secure Storage</strong>
-                  <p>Access control, monitoring, and auditable chain‑of‑custody.</p>
+                  <p>Access control, monitoring, and auditable chain-of-custody.</p>
                 </div>
               </li>
             </ul>
@@ -777,7 +164,7 @@
       <div class="cards">
         <article class="card">
           <div class="kicker" style="padding:6px 10px;font-size:12px;">Freight Forwarding</div>
-          <h3>Domestic lanes & cross‑border moves</h3>
+          <h3>Domestic lanes & cross-border moves</h3>
           <p>From LTL/FTL to expedited air — aligned to time, cost, and risk profiles.</p>
           <ul>
             <li>Road, air, ocean, multimodal</li>
@@ -789,20 +176,20 @@
         <article class="card">
           <div class="kicker" style="padding:6px 10px;font-size:12px;">Execution</div>
           <h3>Control tower operations</h3>
-          <p>One team for booking, tracking, exceptions, and final‑mile confirmation.</p>
+          <p>One team for booking, tracking, exceptions, and final-mile confirmation.</p>
           <ul>
             <li>Milestone tracking and alerting</li>
-            <li>Proof of delivery & close‑out</li>
+            <li>Proof of delivery & close-out</li>
             <li>Claims support and incident documentation</li>
           </ul>
         </article>
 
         <article class="card">
           <div class="kicker" style="padding:6px 10px;font-size:12px;">Special Handling</div>
-          <h3>High‑value & regulated shipments</h3>
-          <p>Documented handling requirements, controlled transfers, and audit‑ready records.</p>
+          <h3>High-value & regulated shipments</h3>
+          <p>Documented handling requirements, controlled transfers, and audit-ready records.</p>
           <ul>
-            <li>Chain‑of‑custody handoffs</li>
+            <li>Chain-of-custody handoffs</li>
             <li>Temperature and security requirements</li>
             <li>Escalation playbooks</li>
           </ul>
@@ -813,7 +200,7 @@
     <section id="storage">
       <div class="section-head">
         <div>
-          <h2>Climate‑Controlled Storage Network</h2>
+          <h2>Climate-Controlled Storage Network</h2>
           <p class="sub">A nationwide footprint for cold chain, controlled ambient, and secure warehousing with standard operating procedures.</p>
         </div>
       </div>
@@ -845,7 +232,7 @@
             <span class="tag">Kitting</span>
           </div>
           <p style="margin-top:12px;color:rgba(243,243,243,.74);font-size:13px;">
-            Inventory governance and traceability designed for high‑assurance storage requirements.
+            Inventory governance and traceability designed for high-assurance storage requirements.
           </p>
         </div>
       </div>
@@ -863,7 +250,7 @@
         <article class="card">
           <div class="kicker" style="padding:6px 10px;font-size:12px;">Intake</div>
           <h3>Secure receiving & indexing</h3>
-          <p>Structured intake with standardized metadata, barcoding, and chain‑of‑custody.</p>
+          <p>Structured intake with standardized metadata, barcoding, and chain-of-custody.</p>
           <ul>
             <li>Document classification and labeling</li>
             <li>Controlled access zones</li>
@@ -874,9 +261,9 @@
         <article class="card">
           <div class="kicker" style="padding:6px 10px;font-size:12px;">Retention</div>
           <h3>Retention schedules & governance</h3>
-          <p>Policy‑driven retention with review workflows and defensible disposition.</p>
+          <p>Policy-driven retention with review workflows and defensible disposition.</p>
           <ul>
-            <li>Role‑based access and approvals</li>
+            <li>Role-based access and approvals</li>
             <li>Audit logs for every action</li>
             <li>Legal hold support</li>
           </ul>
@@ -885,9 +272,9 @@
         <article class="card">
           <div class="kicker" style="padding:6px 10px;font-size:12px;">Delivery</div>
           <h3>Secure retrieval & distribution</h3>
-          <p>Time‑bound access, tracked release, and documented return/destruction.</p>
+          <p>Time-bound access, tracked release, and documented return/destruction.</p>
           <ul>
-            <li>Controlled check‑out/check‑in</li>
+            <li>Controlled check-out/check-in</li>
             <li>Encrypted digital delivery options</li>
             <li>Certificate of destruction available</li>
           </ul>
@@ -900,7 +287,7 @@
       <div class="section-head">
         <div>
           <h2>Nationwide Coverage</h2>
-          <p class="sub">A scalable facility network with standardized controls — ready for multi‑site rollouts and peak volumes.</p>
+          <p class="sub">A scalable facility network with standardized controls — ready for multi-site rollouts and peak volumes.</p>
         </div>
       </div>
 
@@ -920,14 +307,12 @@
                   </linearGradient>
                 </defs>
 
-                <!-- Stylized routes -->
                 <g fill="none" stroke="url(#g)" stroke-opacity=".55" stroke-width="3" stroke-linecap="round">
                   <path d="M110 310 C 190 220, 310 210, 380 240 S 520 305, 610 260 S 740 140, 790 160"/>
                   <path d="M135 150 C 250 120, 330 140, 420 190 S 580 300, 720 330"/>
                   <path d="M210 410 C 300 330, 430 310, 520 335 S 670 410, 780 380"/>
                 </g>
 
-                <!-- Nodes (example cities/regions) -->
                 <g>
                   <circle class="pulse" cx="140" cy="310" r="18"/>
                   <circle class="locator" cx="140" cy="310" r="6"/>
@@ -948,7 +333,6 @@
                   <circle class="locator" cx="755" cy="170" r="6"/>
                 </g>
 
-                <!-- Labels -->
                 <g font-family="ui-sans-serif, system-ui" font-weight="800" font-size="14" fill="rgba(243,243,243,.82)">
                   <text x="156" y="314">West Hub</text>
                   <text x="260" y="178">North Hub</text>
@@ -961,7 +345,7 @@
             </div>
 
             <p class="map-note">
-              Want a real map? Swap the SVG with a static image or embed a map provider. If you want a no‑API approach,
+              Want a real map? Swap the SVG with a static image or embed a map provider. If you want a no-API approach,
               use a branded SVG map of the U.S. with your facility markers.
             </p>
           </div>
@@ -979,7 +363,7 @@
             Typical outcomes:
             <ul style="margin:10px 0 0; padding-left:18px; color: rgba(243,243,243,.78);">
               <li>Fewer handoffs and clearer ownership</li>
-              <li>Better on‑time performance via active exception control</li>
+              <li>Better on-time performance via active exception control</li>
               <li>Reduced temperature excursions through monitored SOPs</li>
               <li>Document traceability with defensible audit trails</li>
             </ul>
@@ -993,7 +377,7 @@
       <div class="section-head">
         <div>
           <h2>Request a Quote / Start a Conversation</h2>
-          <p class="sub">This form is a front‑end template. For production, connect it to your backend or a form service (Cloudflare Forms, email worker, etc.).</p>
+          <p class="sub">This form is a front-end template. For production, connect it to your backend or a form service (Cloudflare Forms, email worker, etc.).</p>
         </div>
       </div>
 
@@ -1019,8 +403,8 @@
               <div class="card" style="padding:14px;">
                 <h3 style="margin:0 0 6px;">Assurance options</h3>
                 <ul style="margin:0;padding-left:18px;">
-                  <li>Role‑based access controls</li>
-                  <li>Chain‑of‑custody handoffs</li>
+                  <li>Role-based access controls</li>
+                  <li>Chain-of-custody handoffs</li>
                   <li>Incident reporting & corrective actions</li>
                   <li>Audit reporting packs</li>
                 </ul>
@@ -1048,7 +432,7 @@
                 </div>
                 <div>
                   <label for="phone">Phone</label>
-                  <input id="phone" name="phone" autocomplete="tel" placeholder="+1 (555) 123‑4567" />
+                  <input id="phone" name="phone" autocomplete="tel" placeholder="+1 (555) 123-4567" />
                 </div>
               </div>
 
@@ -1056,9 +440,9 @@
                 <label for="service">Primary need</label>
                 <select id="service" name="service">
                   <option value="Logistics">Logistics (national / international)</option>
-                  <option value="Storage">Climate‑controlled storage</option>
+                  <option value="Storage">Climate-controlled storage</option>
                   <option value="DocumentControl">Secure document control</option>
-                  <option value="EndToEnd" selected>End‑to‑end (all of the above)</option>
+                  <option value="EndToEnd" selected>End-to-end (all of the above)</option>
                 </select>
               </div>
 

@@ -813,7 +813,7 @@
       <div class="section-head">
         <div>
           <h2>Climate‑Controlled Storage Network</h2>
-          <p class="sub">A nationwide footprint for cold chain, controlled ambient, and secure warehousing with standard operating procedures.</p>
+          <p class="sub">A nationwide footprint for cold chain, controlled ambient, and secure warehousing.</p>
         </div>
       </div>
 

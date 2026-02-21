@@ -1069,7 +1069,7 @@
               <div id="formMsg" class="fine" role="status" aria-live="polite"></div>
 
               <p class="fine">
-                By submitting, you agree we may contact you regarding this request. If you need an NDA, mention it in the details.
+                By submitting, you agree we may contact you regarding this request. If you require a non-discloseure agreement, please mention it in the details.
               </p>
             </form>
           </div>
